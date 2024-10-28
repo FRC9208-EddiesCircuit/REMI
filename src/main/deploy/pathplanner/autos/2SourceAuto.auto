@@ -1,0 +1,68 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.71,
+      "y": 4.35
+    },
+    "rotation": 120.0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "AutoShooterCmd"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "AutoIntakeCmd"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "SourceSidePickup1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "SourceSideReturn1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "AutoShooterCmd"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RotateFromSource"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "SetZeroHeadingCmd"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Source",
+  "choreoAuto": false
+}

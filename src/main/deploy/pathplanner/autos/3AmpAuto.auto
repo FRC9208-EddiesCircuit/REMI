@@ -1,0 +1,99 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.7,
+      "y": 6.73
+    },
+    "rotation": -120.0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "AutoShooterCmd"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "BlueAmpPickup"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "AutoIntakeCmd"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "BlueAmpReturn"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "AutoShooterCmd"
+          }
+        },
+        {
+          "type": "parallel",
+          "data": {
+            "commands": [
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "AmpSecondNotePickup"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "AutoIntakeCmd"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "AmpSecondNoteReturn"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "AutoShooterCmd"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RotateFromAmp"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "SetZeroHeadingCmd"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Amp",
+  "choreoAuto": false
+}
